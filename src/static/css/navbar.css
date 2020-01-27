@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 35%;
+}
+
+.navigation>a {
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.imgLink {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    transition: all 0.5s;
+}
+
+.imgLink>img {
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    margin: auto 5px;
+}
+
+.imgLink:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.imgLink>p {
+    width: 100%;
+    font-size: 20px;
+    color: #85B3D1FF;
+    margin: auto 10px;
+}
+
+.right {
+    float: right;
+}

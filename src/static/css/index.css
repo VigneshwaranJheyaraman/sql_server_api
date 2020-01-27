@@ -1,0 +1,89 @@
+@import "./app.css";
+@import "./navbar.css";
+.home {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.zone-1 {
+    height: 40%;
+    background-color: #2460A7FF;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+
+.spaced {
+    margin: 10px;
+}
+
+.logo>img {
+    width: 64px;
+    height: 64px;
+}
+
+.zone-2 {
+    height: 60%;
+    background-color: #85B3D1FF;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    min-height: 250px;
+    padding: 25px 10px;
+}
+
+.card {
+    border-radius: 15px;
+    width: 100%;
+    margin: auto 10px;
+    background-color: white;
+}
+
+.code {
+    pointer-events: none;
+}
+
+.terminal {
+    background-color: black;
+}
+
+.lang {
+    color: white;
+}
+
+.seperator {
+    font-size: 25px;
+    margin: auto 5px;
+    text-align: center;
+}
+
+.marker {
+    color: whitesmoke;
+}
+
+.prog {
+    color: darkgreen;
+}
+
+.json {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+}
+
+.lang,
+.marker,
+.prog {
+    margin-right: 5px;
+    margin-left: 5px;
+}

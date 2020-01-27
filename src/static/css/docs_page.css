@@ -1,0 +1,19 @@
+@import "./navbar.css";
+@import "./docs.css";
+@import "./app.css";
+.main {
+    background-color: lightslategray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.footer {
+    height: 5%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
