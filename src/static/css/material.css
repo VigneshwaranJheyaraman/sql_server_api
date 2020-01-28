@@ -1,0 +1,19 @@
+.card {
+    border-radius: 15px;
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+}
+
+.app-title {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title {
+    margin: auto;
+    font-size: 35px;
+    font-family: 'Bowlby One SC', cursive;
+}

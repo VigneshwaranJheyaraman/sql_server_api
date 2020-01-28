@@ -1,12 +1,15 @@
 @import "./navbar.css";
 @import "./docs.css";
 @import "./app.css";
+@import "./grid.css";
+@import "./material.css";
+@import "./colors.css";
 .main {
     background-color: lightslategray;
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .footer {
@@ -16,4 +19,12 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
+}
+
+.title {
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
 }

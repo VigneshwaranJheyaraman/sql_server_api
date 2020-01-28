@@ -17,11 +17,11 @@
         port: 3306,
         user: "remote_api_user",
         password: "remoteUser@123",
-        database: "sqlAPI"
+        database: "sqlAPI",
     };
 
-    databaseObject.getDatabaseConnection = function() {
-        return moduleOrObject.createConnection(SQL_CONFIG);
+    databaseObject.getDatabaseConnection = function(db_name = SQL_CONFIG.database, multipleStatements = false) {
+        return moduleOrObject.createConnection({...SQL_CONFIG, database: db_name ? db_name : SQL_CONFIG.database, multipleStatements: multipleStatements });
     };
 
     return databaseObject;
