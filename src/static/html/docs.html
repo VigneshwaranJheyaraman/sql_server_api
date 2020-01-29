@@ -8,38 +8,11 @@
 </head>
 
 <body>
-    <div class="main column">
-        <div class="column">
-            <h2>Database function</h2>
-            <div class="row">
-                <div class="card spaced column green">
-                    <div class="lang">GET</div>
-                    <div class="title">LINK: http://192.168.7.56:8080/api/v1/db/get/table?key={APP KEY / ANON KEY}</div>
-                    <pre>
-                        <code>{
-                                request:{
-                                    d_name:{DB NAME},
-                                    t_name:{TABLE NAME}
-                                }
-                            }
-                        </code>
-                    </pre>
-                </div>
-                <div class="card spaced column red">
-                    <div class="lang">POST</div>
-                    <div class="title">LINK: http://192.168.7.56:8080/api/v1/db/set/table?key={APP KEY / ANON KEY}</div>
-                    <pre>
-                        <code>
-                            {
-                                request:{
-                                    d_name:{DB NAME},
-                                    t_name:{TABLE NAME}
-                                }
-                            }
-                        </code>
-                    </pre>
-                </div>
-            </div>
+    <div class="main">
+        <div class="sidebar">
+            <a href="/" class="selected">Home</a>
+            <a href="/get">Get methods</a>
+            <a href="/post">Set methods</a>
         </div>
     </div>
 </body>

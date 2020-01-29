@@ -1,0 +1,23 @@
+.sidebar {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    background-color: whitesmoke;
+    transition: all 0.5s;
+}
+
+.sidebar a {
+    display: block;
+    color: red;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.selected {
+    background-color: red;
+    color: white !important;
+    border-radius: 10px;
+}
