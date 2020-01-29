@@ -24,6 +24,44 @@
         return moduleOrObject.createConnection({...SQL_CONFIG, database: db_name ? db_name : SQL_CONFIG.database, multipleStatements: multipleStatements });
     };
 
+    databaseObject.validateQueryParams = function(paramString) {
+        return /^[a-zA-Z0-9_]*$/.test(paramString);
+    }
+
+    databaseObject.mapRelationWithOperators = function(relation) {
+        switch (relation) {
+            case "-lt":
+                return "<";
+            case "-gt":
+                return ">";
+            case "-eq":
+                return "=";
+            case "-lte":
+                return "<=";
+            case "-gte":
+                return ">=";
+            case "-ne":
+                return "<>";
+            case "-like":
+                return "LIKE";
+            default:
+                return undefined;
+        }
+    }
+
+    databaseObject.mapLogicalWithOperator = function(logic) {
+        switch (logic) {
+            case "and":
+                return "AND";
+            case "or":
+                return "OR";
+            case "not":
+                return "NOT";
+            default:
+                return undefined;
+        }
+    }
+
     return databaseObject;
 
 })
