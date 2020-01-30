@@ -60,7 +60,7 @@ const SETTER = {
     update: "/post/table/update",
     filter: "/post/table/filter",
     createDB: "/post/db/create",
-    deleteDB: "/post/db/delete",
+    deleteDB: "/post/db/drop",
     createTab: "/post/table/create",
     deletTab: "/post/table/drop",
 };

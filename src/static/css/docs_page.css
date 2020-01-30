@@ -1,8 +1,12 @@
 @import "./sidebar.css";
+@import "./docs.css";
+@import "./app.css";
+@import "./dropdown.css";
+@import "./colors.css";
 .main {
     background-color: lightslategray;
     position: relative;
     display: flex;
-    flex-direction: column;
-    overflow: auto;
+    flex-direction: row;
+    width: 100%;
 }

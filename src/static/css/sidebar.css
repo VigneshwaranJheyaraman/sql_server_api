@@ -1,23 +1,43 @@
 .sidebar {
-    position: fixed;
     margin: 0;
-    padding: 0;
-    width: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 250px;
     height: 100%;
     overflow: auto;
     background-color: whitesmoke;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
-.sidebar a {
+.sidebar>* {
+    margin-top: 10px !important;
+}
+
+.sidebar a,
+.nav-head {
     display: block;
     color: red;
     padding: 10px;
     text-decoration: none;
+    word-wrap: break-word;
+}
+
+.nav-head:hover {
+    background-color: rgba(224, 54, 54, 0.651);
+    color: white !important;
+}
+
+.sidebar a:hover {
+    background-color: rgba(224, 54, 54, 0.651);
+    color: white;
 }
 
 .selected {
-    background-color: red;
+    background-color: salmon;
     color: white !important;
-    border-radius: 10px;
+}
+
+.bend-border {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

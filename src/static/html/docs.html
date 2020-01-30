@@ -4,17 +4,411 @@
 <head>
     <link rel="shortcut icon" type="image/png" href="http://192.168.7.56:8080/img/logo.png" />
     <link rel="stylesheet" href="http://192.168.7.56:8080/css/docs_page.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i&display=swap" rel="stylesheet">
     <title>{A_SS}: API for Sql Server</title>
 </head>
 
 <body>
     <div class="main">
         <div class="sidebar">
-            <a href="/" class="selected">Home</a>
-            <a href="/get">Get methods</a>
-            <a href="/post">Set methods</a>
+            <a href="/" class="selected bend-border">Home</a>
+            <div class="dropdown-parent">
+                <div class="nav-head bend-border getter">Get methods</div>
+                <div class="dropdown-child bend-border">
+                    <div class="dropdown-parent">
+                        <a href="#getTable" class="bend-border">SQL Table data selection</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#gtobj" class="bend-border">Objective</a>
+                            <a href="#gtreq" class="bend-border">Request Object</a>
+                            <a href="#gtres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#filterTable" class="bend-border">Filtering the data selection of SQL Table</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#ftobj" class="bend-border">Objective</a>
+                            <a href="#ftreq" class="bend-border">Request Object</a>
+                            <a href="#ftres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown-parent">
+                <div class="nav-head bend-border setter">Set Methods</div>
+                <div class="dropdown-child bend-border">
+                    <div class="dropdown-parent">
+                        <a href="#createTable">
+                            Create SQL Table
+                        </a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#ctobj" class="bend-border">Objective</a>
+                            <a href="#ctreq" class="bend-border">Request Object</a>
+                            <a href="#ctres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#deleteTable">SQL Delete Table contents</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#dtobj" class="bend-border">Objective</a>
+                            <a href="#dtreq" class="bend-border">Request Object</a>
+                            <a href="#dtres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#updateTable">SQL Table updates</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#utobj" class="bend-border">Objective</a>
+                            <a href="#utreq" class="bend-border">Request Object</a>
+                            <a href="#utres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#insertTable">SQL Table Insertion</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#itobj" class="bend-border">Objective</a>
+                            <a href="#itreq" class="bend-border">Request Object</a>
+                            <a href="#itres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#dropTable">Delete SQL Table</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#drtobj" class="bend-border">Objective</a>
+                            <a href="#drtreq" class="bend-border">Request Object</a>
+                            <a href="#drtres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#createDB">Create SQL DB</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#cdobj" class="bend-border">Objective</a>
+                            <a href="#cdreq" class="bend-border">Request Object</a>
+                            <a href="#cdres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-parent">
+                        <a href="#dropDB">Delete SQL DB</a>
+                        <div class="dropdown-child innerChild">
+                            <a href="#ddobj" class="bend-border">Objective</a>
+                            <a href="#ddreq" class="bend-border">Request Object</a>
+                            <a href="#ddres" class="bend-border">Response Object</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="docs">
+            <div class="doc" id="getTable">
+                <h1 class="heading1">Get SQL Table contents</h1>
+                <p class="innerChild obj" id="gtobj">This uses <span class="tag getter">/post</span> method and retrieves the table data from mysql server based on the database and table name provided.<span class="tag"> Note: ! - means optional</span></p>
+                <h3 class="innerChild req red" id="gtreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "fields"!: ["fields array"]
+                        }
+                    }
+                </pre>
+                <h3 class="innerChild res green" id="gtres">Response Object</h3>
+                <pre class="ic-child terminal prettyprint">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="filterTable">
+                <h1 class="heading1">Filter SQL Table contents</h1>
+                <p class="innerChild obj" id="ftobj">This is <span class="tag getter">/post</span> method which returns the data based on the filtering condition.<span class="tag"> Note: ! - means optional</span></p>
+                <h3 class="innerChild req red" id="ftreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "fields":["Array of fields name"]
+                            "filter": [
+                                    "Array of filter",
+                                    ["col_name", "relations", "value", "is_not"],
+                                    "relations" => "-eq, -lte, -gte-, -ne, -like, -lt, -gt"
+                                    "is_not" => "whether condition is enclosed within NOT()"
+                                    "logical-relation" !optional,
+                                    "logical-relation" => "and, or"
+                                    ["col_name", "relations", "value", "is_not"] !optional
+                                    ...
+                                ]
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="ftres">Response Object</h3>
+                <pre class="ic-child terminal prettyprint">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="createTable">
+                <h1 class="heading1">Create SQL Table</h1>
+                <p class="innerChild obj" id="ctobj">This is a <span class="tag setter">/post</span> method which allows user to create a sql table based on the specifications provided by the user.<span class="tag"> Note: ! - means optional</span></p>
+                <h3 class="innerChild req red" id="ctreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "fields":[
+                                        {
+                                            "name":"name of the column",
+                                            "type":"data type of the column",
+                                            "length" !:"length of the column",
+                                            "is_primary" !:"boolean whether is primary key or not",
+                                            "is_unique" !:"boolean whether column is unique or not",
+                                            "not_null" !:"boolean whether column is not null or not",
+                                            "auto_increment" !: "boolean whether is auto increment or not"
+                                        }
+                                        ,...
+                                    ]
+                            }
+                        
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="ctres">Response Object</h3>
+                <pre class="ic-child terminal prettyprint">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="deleteTable">
+                <h1 class="heading1">SQL Table contents deletion</h1>
+                <p class="obj innerChild" id="dtobj">This is a <span class="tag setter">/post</span> method which allows user to delete MySQL Table data based on the filtering conditions.<span class="tag"> Note: ! - means optional</span></p>
+                <h3 class="req innerChild red" id="dtreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "filter": [
+                                    "Array of filter",
+                                    ["col_name", "relations", "value", "is_not"],
+                                    "relations" => "-eq, -lte, -gte-, -ne, -like, -lt, -gt"
+                                    "is_not" => "whether condition is enclosed within NOT()"
+                                    "logical-relation" !optional,
+                                    "logical-relation" => "and, or"
+                                    ["col_name", "relations", "value", "is_not"] !optional
+                                    ...
+                                ]
+                        }
+                    }
+                </pre>
+                <h3 class="innerChild res green" id="dtres">Response Object</h3>
+                <pre class="prettyprint ic-child terminal">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="updateTable">
+                <h1 class="heading1">SQL Table content update</h1>
+                <p class="obj innerChild" id="utobj">This is a <span class="tag setter">/post</span> method, which allows user to delete multiple fields from MySQL Table from the data provided.<span class="tag">Note ! - means optional.</span></p>
+                <h3 class="req innerChild red" id="utreq">Request Object</h3>
+                <pre class="prettyprint ic-child terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "updates":[
+                                        "Arrayt of updates",
+                                        ["col_name", "updated_value"]
+                                        ,...
+                                    ]
+                            "filter": [
+                                    "Array of filter",
+                                    ["col_name", "relations", "value", "is_not"],
+                                    "relations" => "-eq, -lte, -gte-, -ne, -like, -lt, -gt"
+                                    "is_not" => "whether condition is enclosed within NOT()"
+                                    "logical-relation" !optional,
+                                    "logical-relation" => "and, or"
+                                    ["col_name", "relations", "value", "is_not"] !optional
+                                    ...
+                                ]
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="utres">Response Object</h3>
+                <pre class="ic-child terminal prettyprint">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="insertTable">
+                <h1 class="heading1">SQL Table Data insertion</h1>
+                <p class="obj innerChild" id="itobj">This is a <span class="tag setter">/post</span> method, where MySQL Table data are inserted irrelevant of the quantity.<span class="tag">Note: ! - means optional.</span></p>
+                <h3 class="req innerChild red" it="itreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name",
+                            "fields":[
+                                        "Array of fields object",
+                                        {
+                                            "col1_name":"value_1",
+                                            "col2_name":"value_2",
+                                            ...
+                                            "coln_name":"value_n"
+                                        },
+                                        ...
+                                    ]
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="itres">Response Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="dropTable">
+                <h1 class="heading1">SQL Table Deletion</h1>
+                <p class="obj innerChild" id="drtobj">This is a <span class="tag setter">/post</span> which allows user to delete the entire table.<span class="tag">Note: ! - means optional.</span></p>
+                <h3 class="req innerChild red" id="drtreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name",
+                            "t_name":"Table name"
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild red" id="drtres">Response Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="createDB">
+                <h1 class="heading1">SQL Database creation</h1>
+                <p class="obj innerChild" id="cdobj">This is a <span class="tag setter">/post</span> method which allows user to create a database.<span class="tag">Note: ! - means optional</span></p>
+                <h3 class="req innerChild red" id="cdreq">Request Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name"
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="cdres">Response Object</h3>
+                <pre class="ic-child terminal prettyprint">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="doc" id="dropDB">
+                <h1 class="heading1">SQL Database deletion</h1>
+                <p class="obj innerChild" id="ddobj">This is a <span class="tag setter">/post</span> method which allows user to delete an entire database.<span class="tag">Note: ! - means optional.</span></p>
+                <h3 class="res innerChild red" id="ddreq">Request Object</h3>
+                <pre class="prettyprint ic-child terminal">
+                    {
+                        "request":{
+                            "d_name":"Database name"
+                        }
+                    }
+                </pre>
+                <h3 class="res innerChild green" id="ddres">Response Object</h3>
+                <pre class="ic-child prettyprint terminal">
+                    {
+                        "response":{
+                            "code":100-501,
+                            "status":"Status text",
+                            "result":{{
+                                "msg":"[{response}] | Response msg"
+                            }}
+                        }
+                    }
+                </pre>
+            </div>
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 </html>

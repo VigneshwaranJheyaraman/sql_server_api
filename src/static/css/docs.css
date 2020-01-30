@@ -1,34 +1,79 @@
 .docs {
-    background-color: rgba(150, 150, 150, 0.7);
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
     width: 100%;
-    height: 90%;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    grid-column-gap: 10px;
-}
-
-.left-col {
-    grid-row: 1;
-    grid-column: 1;
-    background-color: whitesmoke;
+    height: 100%;
+    flex-direction: column;
+    background-color: gray;
+    scroll-behavior: smooth;
     overflow: auto;
 }
 
-.right-col {
-    grid-row: 1;
-    grid-column: 2;
-    background-color: lightgrey;
-    width: 98%;
+.tag {
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 10px;
+    text-decoration: underline;
 }
 
-.header {
-    font-size: 20px;
-    color: darkslategrey;
-    display: block;
-    margin: 5px;
-    text-align: center;
-    font-weight: 900;
+.getter {
+    background-color: green;
+    color: black !important;
+}
+
+.setter {
+    background-color: red;
+    color: black;
+}
+
+.doc {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    word-wrap: break-word;
+}
+
+.doc>* {
+    margin: 5px 0;
+}
+
+.heading1 {
+    font-size: 25px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Noto Serif', serif;
+}
+
+.terminal {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+}
+
+.req,
+.res,
+.obj {
+    font-size: 15px;
     text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-weight: bolder;
+}
+
+.obj {
+    text-transform: unset !important;
+}
+
+.ic-child {
+    margin: auto 30px !important;
+}
+
+.seperator {
+    display: block;
+    border: 3px solid black;
+    transform: rotate(180deg);
+    margin: 15px 0;
 }

@@ -1,0 +1,17 @@
+{
+    "methods": {
+        "getter": {
+            "/get/table": "Retrives the table as a whole",
+            "/post/table/filter": "Filter the table based on condition"
+        },
+        "setter": {
+            "/post/table/insert": "Peforms insertion of table",
+            "/post/table/delete": "Peforms table data deletion",
+            "/post/table/update": "Peforms update operation of sql table",
+            "/post/table/create": "Creates a table",
+            "/post/table/drop": "Drops a table",
+            "/post/db/create": "Creates a database",
+            "/post/db/drop": "Delete a database"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.dropdown-parent {
+    transition: all 0.2s;
+    position: relative;
+}
+
+.dropdown-parent:hover {
+    cursor: pointer;
+}
+
+.dropdown-child {
+    position: relative;
+    margin-left: 10px;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+.dropdown-child>* {
+    display: block !important;
+    color: red !important;
+    transition: all 0.2s;
+}
+
+.dropdown-child>a:hover {
+    background-color: rgb(238, 83, 83);
+    color: white !important;
+    border-radius: 10px;
+}
+
+.innerChild {
+    margin-left: 20px !important;
+}
+
+@keyframes expand {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes expand {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes expand {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
